@@ -8,6 +8,14 @@ resource "azurerm_container_registry" "positive2" {
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   sku                      = "Premium"
+  admin_enabled            = false
+  georeplication_locations = ["East US", "West Europe"]
+}
+resource "azurerm_container_registry" "positive3" {
+  name                     = "containerRegistry2"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
+  sku                      = "Premium"
   admin_enabled            = true
   georeplication_locations = ["East US", "West Europe"]
 }
