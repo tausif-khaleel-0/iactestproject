@@ -1,12 +1,13 @@
 name: Test Orca IaC action
 
 on:
-  workflow_dispatch:
+  - pull_request
+  - push
 
 jobs:
   iac_scan_job:
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - uses: actions/checkout@v3
       - name: Scan IaC
         uses: ./
@@ -14,7 +15,7 @@ jobs:
           api_token:
             ${{ secrets.ORCA_SECURITY_API_TOKEN }}
           project_key:
-            "default"
+            "iwillsurvive"
           path:
             "test"
           format:
