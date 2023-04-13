@@ -1,7 +1,6 @@
 name: Test Orca IaC action
 
 on:
-  - pull_request
   - push
 
 jobs:
