@@ -1,7 +1,9 @@
 name: Test Orca IaC action
 
 on:
-  - push
+push
+pull_request:
+      types: [opened, reopened, synchronize]
 
 jobs:
   iac_scan_job:
